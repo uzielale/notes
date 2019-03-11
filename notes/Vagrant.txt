@@ -1,0 +1,40 @@
+OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054
+Solución: Este error ocurre por la conexión a internet.
+
+Ver información de conexion ssh, ejecutar el siguiente comando dentro de D://Homestead
+	vagrant ssh-config
+
+Datos de acceso a maquina virtual
+username: vagrant 
+password: vagrant
+
+Crear llave ssh
+	ssh-keygen -t rsa -C "u.andrade.open@gmail.com"
+
+vagrant up
+vagrant ssh
+cd code
+laravel new homestead
+vagrant destroy --force  #Destruye la maquina virtual
+
+vagrant halt  #Apaga la maquina virtual
+vagrant suspend #Suspende o hiverna la maquina virtual
+
+Sitio Web de Referencia
+https://laraveles.com/usando-homestead-como-entorno-de-desarrollo/
+
+vagrant reload --provision  #Actualiza los cambios en el archivo Homstead.yml
+
+Si homestead.app da error cambiar a .dev
+
+Agregando los host a host de windows
+192.168.10.10  laraveles.app
+192.168.10.10  homestead.app
+
+
+folders:
+    #- map: ~/code  #Carpeta local en linux
+    - map: D:\Desarrollos #Carpeta local en windows
+      to: /home/vagrant/code #Carpeta local en la maquina virtual
+IMPORTANTE
+En estas lineas de codigo se indica cual sera la carpeta en nuestro equipo que utilizaremos para nuestros proyectos y la carpeta en la maquina virtual en la que crearemos los proyectos, por defecto la de la maquina virtual sera: /home/vagrant/code, ambas carpetas estan sincronizadas, por lo que cualquer cambio en una de ellas se vera reflejado en la otra
