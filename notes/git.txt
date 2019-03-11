@@ -1,0 +1,8 @@
+Vincular branches repositorio remoto
+	git fetch -all o git fetch origin 
+Actualizar todas las ramas locales con las remotas
+	git pull --all
+Luego copiar la rama remota a una nueva rama local
+	git checkout -b newlook origin/newlook
+Listar ramas remotas
+	git branch -r
