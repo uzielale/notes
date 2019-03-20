@@ -1,0 +1,39 @@
+Inportar twig a nuestro proyecto con composer
+composer require "twig/twig:^1.0"
+
+FILE index.php
+	<?php 
+	require_once './vendor/autoload.php';
+
+	/*$template = file_get_contents("views/index.html");
+	$loader = new \Twig\Loader\ArrayLoader([
+	    'index' => 'Hello {{ name }}!, {{ saludo }}', 
+	    'index_2' => $template
+	]);
+	$twig = new \Twig\Environment($loader);
+	echo $twig->render('index_2', ['name' => 'Admin', 'saludo' => 'Como estas.']);
+	*/
+
+	$loader = new \Twig\Loader\FilesystemLoader('./views');
+	$twig = new \Twig\Environment($loader, []);
+	echo $twig->render('main.html', ['name' => 'Admin', 'saludo' => 'Como estas.']);
+
+	?>
+
+FILE index.html
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Document</title>
+	</head>
+	<body>
+	    <h4>Hello {{ name }}, {{ saludo }}</h4>
+	</body>
+	</html>
+
+
+Habilitar dump()
+https://twig.symfony.com/doc/1.x/functions/dump.html
+$this->twig = new Environment($loader, ['debug' => true]);
+$this->twig->addExtension(new \Twig\Extension\DebugExtension());

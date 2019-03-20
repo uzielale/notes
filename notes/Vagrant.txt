@@ -38,3 +38,5 @@ folders:
       to: /home/vagrant/code #Carpeta local en la maquina virtual
 IMPORTANTE
 En estas lineas de codigo se indica cual sera la carpeta en nuestro equipo que utilizaremos para nuestros proyectos y la carpeta en la maquina virtual en la que crearemos los proyectos, por defecto la de la maquina virtual sera: /home/vagrant/code, ambas carpetas estan sincronizadas, por lo que cualquer cambio en una de ellas se vera reflejado en la otra
+
+C:\Users\ti02\.vagrant.d\boxes\laravel-VAGRANTSLASH-homestead\7.1.0\virtualbox
